@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Database Website</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            background-color: #f4f4f9; 
+            padding: 20px; 
+            text-align: center;
+        }
+        h1 { color: #333; }
+        .card { 
+            background: white; 
+            border: 1px solid #ddd;
+            border-radius: 10px; 
+            padding: 15px; 
+            margin: 10px auto; 
+            width: 50%;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+        }
+        .name { color: #d9534f; font-size: 24px; font-weight: bold; }
+        .details { color: #555; margin-bottom: 10px; }
+        
+        /* Button Styles */
+        .btn-edit {
+            color: orange; 
+            text-decoration: none; 
+            border: 1px solid orange; 
+            padding: 5px 10px; 
+            border-radius: 5px; 
+            margin-right: 10px;
+        }
+        .btn-delete {
+            color: red; 
+            text-decoration: none; 
+            border: 1px solid red; 
+            padding: 5px 10px; 
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🚀 My Super Student List 🚀</h1>
+
+    <a href="/add/" style="background: blue; color: white; padding: 10px; text-decoration: none; border-radius: 5px;">
+        ➕ Add New Student
+    </a>
+    <br><br>
+
+    {% for s in students %}
+    
+        <div class="card">
+            <div class="name">👤 {{ s.name }}</div>
+            <div class="details">Age: {{ s.age }} | City: {{ s.city }}</div>
+            
+            <br>
+            
+            <a href="/update/{{ s.id }}/" class="btn-edit">
+                ✏️ Edit
+            </a>
+
+            <a href="/delete/{{ s.id }}/" class="btn-delete" onclick="return confirm('Are you sure you want to delete?');">
+                🗑️ Delete 
+            </a>
+
+        </div>
+
+    {% endfor %}
+
+</body>
+</html>
