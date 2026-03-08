@@ -38,6 +38,17 @@ python manage.py runserver
 
 ## Deployment
 Deployed using Render cloud platform.
+## API Endpoints
+
+GET /students/ - List all students
+
+POST /students/ - Create new student
+
+GET /students/{id}/ - Retrieve student
+
+PUT /students/{id}/ - Update student
+
+DELETE /students/{id}/ - Delete student
 
 ## Author
 Vadde Ganesh Kumar
