@@ -122,3 +122,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 # CORS Settings
 CORS_ALLOW_ALL_ORIGINS = True
+# CSRF Trusted Origins
+CSRF_TRUSTED_ORIGINS = [
+    'https://ganesh-django-api.onrender.com',
+]
